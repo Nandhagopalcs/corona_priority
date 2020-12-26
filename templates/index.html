@@ -2,19 +2,36 @@
 <html>
 <head>
 <title>Vaccine Registration</title>
-<link rel="stylesheet" type="text/css" href="style.css" /> 
+<style type="text/css">
+	
+ body {
+	 background: #c1bdba;
+	 font-family: 'Titillium Web', sans-serif;
+
+	}
+div{
+	 background:  rgba(19, 35, 47, .9);
+	 padding: 40px;
+	 max-width: 600px;
+	 margin: 40px auto;
+	 border-radius: 4px;
+	 box-shadow: 0 4px 10px 4px rgba(19, 35, 47, .3);
+}
+</style>
 </head>
 <body>
 
 <div style="text-align: center;">
-<h1 style="text-align:center;">Vaccine Registration</h1>
+<h1 style="text-align:center;color:rgb(112, 120, 86);">Vaccine Registration</h1>
+
+<div style="color: rgb(146, 129, 132)">
 <form action="{{ url_for('predict')}}"method="post">
   <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname" value="john"><br><br>
+  <input type="text" id="fname" name="fname" placeholder="First name"><br><br>
   <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="text" id="lname" name="lname" placeholder="Last name"><br><br>
   <label for="age">Age:</label>
-  <input type="text" id="age" name="age" value="00"><br><br>
+  <input type="text" id="age" name="age" placeholder="0"><br><br>
   <label >Gender:</label><br>
   <input type="radio" id="male" name="gender" value="male">
   <label for="male">Male</label><br>
@@ -87,10 +104,11 @@
   <label for="pregnant">Pregnant</label><br><br>
   <button type="submit">Predict</button>
 </form> 
+
 </div>
 <div style="text-align: center;">
 	{{ prediction_text }}
 </div>
-
+</div>
 </body>
 </html>
